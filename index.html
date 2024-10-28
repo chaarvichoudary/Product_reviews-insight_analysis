@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Product Review Sentiment Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Amazon Product Review Sentiment Analysis</h1>
+
+    <form method="POST">
+        <label for="product_id">Select a Product:</label>
+        <select name="product_id" id="product_id">
+            {% for product_id in product_ids %}
+                <option value="{{ product_id }}">{{ product_id }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if result %}
+        <h2>Product Analysis Results</h2>
+        <pre>{{ result }}</pre>
+    {% endif %}
+</body>
+</html>
