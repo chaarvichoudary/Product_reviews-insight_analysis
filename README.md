@@ -36,10 +36,15 @@ Git
 📈 Data Flow
 
 Product reviews are read from the CSV file
+
 Reviews are sent to Kafka topic 'product_reviews'
+
 The main application consumes messages from Kafka
+
 SVM model performs sentiment analysis on the reviews
+
 Results are stored in HBase for persistence
+
 Analysis results can be queried from HBase
 
 
